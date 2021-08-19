@@ -1,0 +1,12 @@
+create table book(
+book_isbn number(5) constraint book_isbn_pk primary key, --도서 번호
+book_title varchar2(50) constraint book_title_nn not null, --도서 명
+book_author varchar2(250) constraint book_author_nn not null, --저자
+book_publisher varchar2(50) constraint book_publisher_nn not null, --출판사
+book_price number(6) constraint book_price_nn not null, --가격
+book_desc varchar2(200), --상세
+book_publish_date varchar2(10) constraint book_publish_date_ck check (book_publish_date like 'yy.mm')  --발행일
+)
+/
+
+
